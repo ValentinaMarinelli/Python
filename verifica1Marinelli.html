@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Verifica metafore 1 Marinelli</title>
+</head>
+<body>
+    <h1> N@arrazione </h1>
+
+    <div>
+        <p id="narrazione"></p>
+    </div>
+
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Oppresso</label>
+            <input type="text" class="form-control" id="oppresso"  oninput="Stringa()" placeholder="SOGGETTO oppresso">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Oppressore</label>
+            <input type="text" class="form-control" id="oppressore" oninput="Stringa()" placeholder="SOGGETTO oppressore">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Situazione</label>
+            <input type="text" class="form-control" id="situazione" oninput="Stringa()" placeholder="SITUAZIONE in cui si svolge l'azione">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Motivazione</label>
+            <input type="text" class="form-control" id="motivazione" oninput="Stringa()" placeholder="MOTIVAZIONE per reagire ad oppressione">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Feedback</label>
+            <input type="text" class="form-control" id="feedback" oninput="Stringa()" placeholder="FEEDBACK da inviare ad oppressore">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Strada OK</label>
+            <input type="text" class="form-control" id="stradaOK" oninput="Stringa()" placeholder="COMPORTAMENTO ADEGUATO per reagire ad oppressione">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Strada KO</label>
+            <input type="text" class="form-control" id="stradaKO" oninput="Stringa()" placeholder="COMPORTAMENTO INADEGUATO per reagire ad oppressione">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Conseguenze negative</label>
+            <input type="text" class="form-control" id="conseguenze" oninput="Stringa()" placeholder="CONSEGUENZE NEGATIVE del comportamento inadeguato">
+        </div>
+    </form>
+
+    <script>
+        function Stringa(){
+            let stringa;
+            if(document.getElementById("oppresso").value=="")
+                soggettoOppresso=`SOGGETTO OPPRESSO`;
+            else
+                soggettoOppresso=document.getElementById("oppresso").value;  
+
+            if(document.getElementById("oppressore").value=="")
+                soggettoOppressore=`SOGGETTO OPPRESSORE`;
+            else
+                soggettoOppressore=document.getElementById("oppressore").value;
+
+            if(document.getElementById("situazione").value=="")
+                situazione=`SITUAZIONE`;
+            else
+                situazione=document.getElementById("situazione").value;
+
+            if(document.getElementById("motivazione").value=="")
+                mot=`MOTIVAZIONE`;
+            else
+                mot=document.getElementById("motivazione").value;
+
+            if(document.getElementById("feedback").value=="")
+                fB=`FEEDBACK`;
+            else
+                fB=document.getElementById("feedback").value;
+
+            if(document.getElementById("stradaOK").value=="")
+                stradaOK=`COMPORTAMENTO ADEGUATO`;
+            else
+                stradaOK=document.getElementById("stradaOK").value;
+
+            if(document.getElementById("stradaKO").value=="")
+                stradaKO=`COMPORTAMENTO INADEGUATO`;
+            else
+                stradaKO=document.getElementById("stradaKO").value;
+
+            if(document.getElementById("conseguenze").value=="")
+                cons=`CONSEGUENZE NEGATIVE`;
+            else
+                cons=document.getElementById("conseguenze").value;
+            
+            stringa=`${soggettoOppresso} vuoi reagire ad oppressione esercitata da ${soggettoOppressore}? NO!
+                    Mancando ${mot} per reagire a ${soggettoOppressore}, ${soggettoOppresso} nel contesto ${situazione}, rimarrai oppresso!
+                    ${soggettoOppresso} vuoi reagire ad oppressione esercitata da ${soggettoOppressore}? SI!
+                    ${soggettoOppresso} quale reazione scegli?
+                    ATTENZIONE ${soggettoOppresso} la scelta ${stradaKO} ti allontana dal riuscire a mandare un ${feedback} efficacie a ${soggettoOppressore}
+                    :( ${soggettoOppresso} ti sei allontanato troppo, hai scelto la strada chiusa ${stradaKO} e ti sei scontrato con ${cons} 
+                    ${soggettoOppresso} quale reazione scegli? 
+                    ${soggettoOppresso} la scelta ${stradaOK} ti avvicina a mandare un ${feedback} efficacie a ${soggettoOppressore} continua così!
+                    Coraggio ci sei quasi fai l'ultimo passo
+                    :) COMPLIMENTI ${soggettoOppresso} non sei più oppresso da ${soggettoOppressore}!!!`
+            document.getElementById("narrazione").innerText=stringa;
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
